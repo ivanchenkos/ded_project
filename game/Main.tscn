@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Main" type="Spatial"]
+
+[node name="Player" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.647149, 0.762363, 0, -0.762363, 0.647149, -2.60469, 9.89469, 1.82191 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0315526, 0 )
+fov = 95.0961
+
+[node name="Test Area" type="StaticBody" parent="."]
+transform = Transform( 43.0129, 0, 0, 0, 1, 0, 0, 0, 39.0872, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Test Area"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Test Area"]
+mesh = SubResource( 2 )
+
+[node name="Cube" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89129, 1.91079, -3.26193 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Cube"]
+mesh = SubResource( 2 )
